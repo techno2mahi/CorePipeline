@@ -1,1 +1,4 @@
 CorePipeline/.vs/
+CorePipeline/obj/
+CorePipeline/bin/
+.vs/
