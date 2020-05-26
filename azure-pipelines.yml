@@ -26,8 +26,9 @@ stages:
     - task: Docker@2
       inputs:
         containerRegistry: 'MahidockerhubConnection'
-        repository: 'netcoreapps'
+        repository: 'techno2mahi/netcoreapps'
         command: 'buildAndPush'
         Dockerfile: '**/Dockerfile'
         tags: |
           $(tag)
+    
