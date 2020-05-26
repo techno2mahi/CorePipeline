@@ -21,15 +21,8 @@ stages:
       vmImage: 'windows-latest'
     steps:
     - task: Docker@2
-      displayName: Build an image
-      inputs:
-        command: build
-        dockerfile: '$(Build.SourcesDirectory)/CorePipeline/Dockerfile'
-        tags: |
-          $(tag)
-    - task: Docker@2
-      displayName: Push the image to Docker Hub
       inputs:
         containerRegistry: 'MahidockerhubConnection'
         repository: 'netcoreapps'
-        command: 'push'
+        command: 'buildAndPush'
+        Dockerfile: '**/Dockerfile'
